@@ -16,11 +16,7 @@ class Form extends Component {
     );
   }
 }
-const Lista = (props) => {
-  const palavras = props.elementos.map(item => <li>{item}</li>)
-
-  return <ol>{palavras}</ol>
-}
+const Lista = (props) => props.elementos.map(item => <li>{item}</li>);
 
 class App extends Component {
   constructor(props) {
@@ -39,7 +35,9 @@ class App extends Component {
     return (
       <div >
         <Form add={this.add} resetar={this.resetar} />
-        <Lista elementos={this.state.listaToDo} />
+        <ol>
+          <Lista elementos={this.state.listaToDo} />
+        </ol>
       </div>
     );
   }
